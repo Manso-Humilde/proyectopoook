@@ -1,9 +1,23 @@
+import com.objetos.Director;
+import com.objetos.Empleado;
 import com.objetos.Persona;
+
 
 public class App {
     public static void main(String[] args) {
         System.out.println("Probando la clase Persona");
         try {
+            Empleado emp = new Empleado();
+            System.out.println("Salario minimo Empleado: " + emp.getSalarioMinimo());
+            emp.setNombre("Santos");
+            emp.setApellidos("Cerdan");
+            emp.setSueldo(1800);
+            emp.setSalarioMinimo(1200);
+            System.out.println(emp.getNombreCompleto());
+
+            Director dir = new Director();
+            System.out.println("Salario minimo Director: " + dir.getSalarioMinimo());
+            dir.setSalarioMinimo(1400);
             //CUANDO HABLAMOS DE CLASES, NECESITAMOS OBJETOS PARA 
             //TRABAJAR CON DICHAS CLASES
             //INSTANCIAMOS EL OBJETO PERSONA
