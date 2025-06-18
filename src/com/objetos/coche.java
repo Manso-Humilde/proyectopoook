@@ -33,7 +33,7 @@ public class coche {
         }
     }
 
-    public void setVelocidad(int velocidad) {
+    protected void setVelocidad(int velocidad) {
         this.velocidad = velocidad;
     }
 
