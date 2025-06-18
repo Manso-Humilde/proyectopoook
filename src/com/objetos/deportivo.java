@@ -1,8 +1,8 @@
 package com.objetos;
 
-public class Deportivo extends coche {
+public class deportivo extends coche {
 
-    public Deportivo(){
+    public deportivo(){
         this.setVelocidadMaxima(getVelocidadMaxima = 320);
     }
 
