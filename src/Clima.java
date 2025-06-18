@@ -6,10 +6,10 @@ import java.util.Scanner;
 public class Clima {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Mes> meses = new ArrayList<>();
+        ArrayList<Mes> meses = new ArrayList<Mes>();
 
         // Solicitar datos para cada mes
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i <= 12; i++) {
             System.out.println("Introduce los datos para el mes " + (i + 1));
 
             System.out.print("Nombre del mes: ");
