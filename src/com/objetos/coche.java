@@ -1,10 +1,10 @@
 package com.objetos;
 
-public class coche {
+public class Coche {
 
-    public coche(){
+    public Coche(){
         this.velocidad = 0;
-        this.cocheArancado = false;
+        this.cocheArrancado = false;
         this.velocidadMaxima = 180;
     }
 
@@ -12,25 +12,42 @@ public class coche {
     private String modelo;
     private int velocidad;
     private int velocidadMaxima;
-
-    private boolean cocheArancado;
+    //Necesitamos una variable que indicará si el coche
+    //está arrancado o no
+    private boolean cocheArrancado;
 
     public void arrancar(){
         System.out.println("El coche ha arrancado!!! A jugar!!!");
-        this.cocheArancado = true;
+        this.cocheArrancado = true;
     }
 
-    public int acelerar(){
-        if (cocheArancado == false) {
+    public int acelerar() {
+        //No podemos acelerar si el coche no ha arrancado
+        if (this.cocheArrancado == false){
             System.out.println("Debe arrancar el coche primero");
             return 0;
-        } else {
+        }else {
             this.velocidad += 20;
-            if (this.velocidad > this.velocidadMaxima) {
+            if (this.velocidad > this.velocidadMaxima){
                 this.velocidad = this.velocidadMaxima;
             }
             return this.velocidad;
         }
+    }
+
+    public int frenar() {
+        this.velocidad -= 10;
+        if (this.velocidad < 0){
+            this.velocidad = 0;
+        }
+        return this.velocidad;
+    }
+
+    public int frenar(boolean atope){
+        System.out.println("Frenada a tope y apagado!!!");
+        this.velocidad = 0;
+        this.cocheArrancado = false;
+        return 0;
     }
 
     protected void setVelocidad(int velocidad) {
@@ -40,24 +57,17 @@ public class coche {
     public int getVelocidadMaxima() {
         return this.velocidadMaxima;
     }
-    //Esta la pongo protected para que solo el deportivo que 
-    //es heredado la pueda cambia
+    //protected para que otro coche pueda cambiar
+    //su velocidad máxima (Deportivo)
     protected void setVelocidadMaxima(int velocidadMaxima) {
         this.velocidadMaxima = velocidadMaxima;
     }
 
+    //Velocidad será solo lectura
     public int getVelocidad() {
         return this.velocidad;
     }
 
-    public int frenar(){
-        this.velocidad -< 10;
-        if (this.velocidad < 0) {
-            this.velocidad = 0;
-        }
-    }
-
-    
     public String getMarca() {
         return this.marca;
     }
@@ -73,10 +83,12 @@ public class coche {
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
-
+    
+    //SOBRESCRIBIMOS EL METODO toString() PARA 
+    //HACER MAS AGRADABLE EL DIBUJO DE UN COCHE
     @Override
     public String toString(){
         return this.marca + " " + this.modelo
-        + " , velocidad " + this.velocidad;
+        + ", Velocidad: " + this.velocidad;
     }
 }
