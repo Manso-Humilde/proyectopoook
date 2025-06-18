@@ -5,13 +5,27 @@ public class Mes {
     private int temperaturaMaxima;
     private int temperaturaMinima;
 
-    public double generarMediaMensual(){
-        double media = (this.temperaturaMinima + this.temperaturaMaxima) * 1 / 2;
-        return media;
+    public Mes(String nombre, int temperaturaMaxima, int temperaturaMinima) {
+        this.nombre = nombre;
+        this.temperaturaMaxima = temperaturaMaxima;
+        this.temperaturaMinima = temperaturaMinima;
     }
 
+    public double generarMediaMensual() {
+        // Asegurarse de que la división sea de tipo double
+        return (this.temperaturaMinima + this.temperaturaMaxima) / 2.0;
+    }
+
+    @Override
+    public String toString() {
+        return this.nombre + ", Max: " + this.temperaturaMaxima
+                + ", Min: " + this.temperaturaMinima
+                + ", Media: " + this.generarMediaMensual();
+    }
+
+    // Métodos getter y setter (si los necesitas)
     public String getNombre() {
-        return this.nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
@@ -19,7 +33,7 @@ public class Mes {
     }
 
     public int getTemperaturaMaxima() {
-        return this.temperaturaMaxima;
+        return temperaturaMaxima;
     }
 
     public void setTemperaturaMaxima(int temperaturaMaxima) {
@@ -27,20 +41,10 @@ public class Mes {
     }
 
     public int getTemperaturaMinima() {
-        return this.temperaturaMinima;
+        return temperaturaMinima;
     }
 
     public void setTemperaturaMinima(int temperaturaMinima) {
         this.temperaturaMinima = temperaturaMinima;
     }
-
-   @Override
-   public String toString(){
-    return this.nombre + ", Max: " 
-    + this.temperaturaMaxima
-    + ", Min: "
-    + this.temperaturaMinima
-    + ", Avs: "
-     + this.generarMediaMensual();
-   }
 }
