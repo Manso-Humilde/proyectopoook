@@ -12,9 +12,10 @@ public class Coche {
     private String modelo;
     private int velocidad;
     private int velocidadMaxima;
+
     //Necesitamos una variable que indicará si el coche
     //está arrancado o no
-    private boolean cocheArrancado;
+    protected boolean cocheArrancado;
 
     public void arrancar(){
         System.out.println("El coche ha arrancado!!! A jugar!!!");
