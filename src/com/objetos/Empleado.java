@@ -1,6 +1,22 @@
 package com.objetos;
 
 public class Empleado extends Persona{
+    @Override
+    public String toString(){
+        return this.getNombreCompleto() 
+            + "Salario minimo: " 
+                + this.getSalarioMinimo();
+    }
+
+    public final void metodoFinal(){
+        System.out.println("Soy un metodo final");
+    }
+    
+    public int getDiasVacaciones(){
+        System.out.println("Vacaciones de empleado");
+        return 22;
+    }
+
     //Creamos un Constructor vacio
     public Empleado() {
         super();

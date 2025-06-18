@@ -1,3 +1,6 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 import com.objetos.Director;
 import com.objetos.Empleado;
 import com.objetos.Persona;
@@ -7,7 +10,18 @@ public class App {
     public static void main(String[] args) {
         System.out.println("Probando la clase Persona");
         try {
+            // ArrayList<Empleado> embleados = new ArrayList<Empleados>();
+            // Empleado empl = new Empleado();  "Estoy pendiente de esta parte"
+
             Empleado emp = new Empleado();
+            Director dir = new Director();
+            emp.setNombre("Santos");
+            emp.setApellidos("Cerdan ");
+            System.out.println(emp.toString());
+
+            System.out.println("vacaciones empleado: " + emp.getDiasVacaciones());
+            System.out.println("vacaciones director: " + dir.getDiasVacaciones());
+
             System.out.println("Salario minimo Empleado: " + emp.getSalarioMinimo());
             emp.setNombre("Santos");
             emp.setApellidos("Cerdan");
@@ -15,7 +29,7 @@ public class App {
             emp.setSalarioMinimo(1200);
             System.out.println(emp.getNombreCompleto());
 
-            Director dir = new Director();
+           
             System.out.println("Salario minimo Director: " + dir.getSalarioMinimo());
             dir.setSalarioMinimo(1400);
             //CUANDO HABLAMOS DE CLASES, NECESITAMOS OBJETOS PARA 
